@@ -1,0 +1,181 @@
+.header {
+  margin-bottom: get-vw(142px);
+  padding-top: get-vw(75px);
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding-top: 77px;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding-top: 33px;
+  }
+  &__container {
+    position: relative;
+  }
+  &__icon-close {
+    width: get-vw(67px);
+    height: get-vw(67px);
+    position: absolute;
+    right: get-vw(-30px);
+    top: get-vw(-20px);
+    svg {
+      @include wh(100%);
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      @include wh(34px);
+      right: 0;
+      top: 0;
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      @include wh(22px);
+    }
+  }
+  &__text {
+    max-width: get-vw(500px);
+    margin-left: get-vw(453px);
+    font-size: get-vw(26px);
+    @media screen and (max-width: $breakpoint-tablet) {
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.27;
+      margin-left: auto;
+      max-width: 336px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 16px;
+    }
+  }
+  &__img {
+    width: get-vw(560px);
+    height: get-vw(416px);
+    svg {
+      @include wh(100%);
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 392px;
+      height: 294px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__first-row {
+    display: flex;
+    gap: get-vw(25px);
+    align-items: flex-end;
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      gap: 27px;
+      align-items: flex-start;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      gap: 21px;
+      padding-top: 40px;
+    }
+  }
+  &__second-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding-top: get-vw(10px);
+    @media screen and (max-width: $breakpoint-tablet) {
+      gap: 40px;
+      flex-direction: column;
+    }
+  }
+  &__third-row {
+    margin-top: get-vw(-90px);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin-top: 0;
+      flex-direction: row-reverse;
+      margin-bottom: 150px;
+      align-items: center;
+      margin-top: 40px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      margin-top: 20px;
+      gap: 46px;
+      margin-bottom: 47px;
+    }
+  }
+}
+.title {
+  font-family: $font;
+  font-size: get-vw(168px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 3.367px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  &_color {
+    color: $color-primary;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    font-size: 90px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1.8px;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 36px;
+    font-weight: 500;
+
+    letter-spacing: 0.72px;
+  }
+}
+
+.circle-text {
+  position: relative;
+  width: get-vw(360px);
+  height: get-vw(360px);
+  @include flexcc;
+  font-size: get-vw(131px);
+  font-weight: 500;
+  letter-spacing: 2.623px;
+  text-transform: uppercase;
+  font-family: $font;
+  margin-top: get-vw(-52px);
+  margin-right: get-vw(52px);
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 182px;
+    height: 182px;
+    font-size: 70px;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 136px;
+    height: 136px;
+    font-size: 52px;
+  }
+  svg {
+    @include wh(100%);
+    @include tr;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: spin 4s linear infinite;
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

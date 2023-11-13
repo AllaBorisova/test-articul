@@ -1,0 +1,50 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  @include tr;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #fff;
+  height: get-vw(72px);
+  font-size: get-vw(28px);
+  font-weight: 500;
+  border: none;
+  background: $color-primary;
+  gap: get-vw(24px);
+  border-radius: get-vw(129px);
+  width: 100%;
+  letter-spacing: 0.56px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: $font;
+  @media screen and (max-width: $breakpoint-tablet) {
+    height: 60px;
+    border-radius: 129px;
+    font-size: 22px;
+    gap: 16px;
+    letter-spacing: 0.44px;
+  }
+  @media screen and (max-width: 320px) {
+    height: 34px;
+    border-radius: 61px;
+    font-size: 13.255px;
+    letter-spacing: 0.265px;
+    gap: 10px;
+  }
+
+  &:hover {
+    background: lighten($color-primary, 10%);
+  }
+  svg {
+    width: get-vw(30px);
+    height: get-vw(24px);
+    @media screen and (max-width: $breakpoint-tablet) {
+      @include wh(30px);
+    }
+    @media screen and (max-width: 320px) {
+      @include wh(20px);
+    }
+  }
+}

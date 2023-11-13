@@ -1,0 +1,65 @@
+.footer {
+  padding: get-vw(120px) 0;
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding-bottom: 108px;
+    padding-top: 150px;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding-top: 70px;
+    padding-bottom: 108px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: get-vw(150px);
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      gap: 60px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      gap: 30px;
+    }
+  }
+  &__img {
+    width: get-vw(580px);
+    height: get-vw(484px);
+    svg {
+      @include wh(100%);
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      width: 100%;
+      height: 570px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      height: auto;
+    }
+  }
+  &__text {
+    font-family: $font;
+    font-size: get-vw(35px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    max-width: get-vw(808px);
+    @media screen and (max-width: $breakpoint-tablet) {
+      max-width: 100%;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.36px;
+    }
+  }
+  &__link {
+    display: inline-block;
+    border-bottom: 3px solid $color-text;
+  }
+}

@@ -1,0 +1,249 @@
+.job {
+  &__item {
+    border-top: 3px solid $color-border-light;
+    &:last-child {
+      border-bottom: 3px solid $color-border-light;
+    }
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: get-vw(202px);
+    cursor: pointer;
+    @media screen and (max-width: $breakpoint-tablet) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      height: auto;
+      gap: 20px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      padding-top: 17px;
+      padding-bottom: 18px;
+    }
+
+    &__name {
+      font-size: get-vw(69.33px);
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 1.387px;
+      text-transform: uppercase;
+      font-family: $font;
+      @media screen and (max-width: $breakpoint-tablet) {
+        font-size: 40px;
+        letter-spacing: 0.8px;
+        line-height: 1.2;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        font-size: 20px;
+      }
+    }
+    &__sign {
+      padding: 0;
+      width: get-vw(102px);
+      height: get-vw(96px);
+      background: url(../img/sprite.svg#icon-plus) center no-repeat;
+      background-size: get-vw(102px);
+      flex: none;
+      @include tr;
+      .active & {
+        background-image: url(../img/sprite.svg#icon-minus);
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        @include wh(50px);
+        background-size: contain;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        @include wh(21px);
+      }
+    }
+  }
+  &-body {
+    border-top: 3px solid $color-border-light;
+    padding-top: get-vw(77px);
+    padding-bottom: get-vw(101px);
+    display: none;
+    @media screen and (max-width: $breakpoint-tablet) {
+      padding-top: 58px;
+      padding-bottom: 74px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      padding-top: 30px;
+      padding-bottom: 44px;
+    }
+    .active & {
+      display: block;
+    }
+    &__columns {
+      display: grid;
+      grid-template-columns: get-vw(350px) get-vw(871px);
+      gap: get-vw(100px);
+      @media screen and (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 90px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &__experience {
+      grid-row: span 2;
+      @media screen and (max-width: $breakpoint-tablet) {
+        grid-row: span 1;
+      }
+    }
+    &__preview {
+      font-size: get-vw(30px);
+      font-weight: 400;
+      line-height: 1.3;
+      @media screen and (max-width: $breakpoint-tablet) {
+        font-size: 22px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        font-size: 18px;
+        line-height: 1.4;
+      }
+    }
+
+    &__buttons {
+      padding-top: get-vw(73px);
+      @media screen and (max-width: $breakpoint-tablet) {
+        padding-top: 58px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        padding-top: 30px;
+      }
+    }
+    &__options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: get-vw(73px);
+      @media screen and (max-width: $breakpoint-tablet) {
+        column-gap: 74px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &__option {
+      padding-top: get-vw(24px);
+      border-top: 1px solid $color-border-dark;
+      min-height: get-vw(223px);
+      font-size: get-vw(22px);
+      line-height: 1.45;
+      @media screen and (max-width: $breakpoint-tablet) {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.38;
+        min-height: auto;
+        padding-top: 25px;
+        padding-bottom: 40px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        font-size: 16px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    &__detail {
+      @media screen and (max-width: $breakpoint-tablet) {
+        grid-column: span 2;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  &-tabs {
+    &__list {
+      @include ul-clean;
+      display: flex;
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      width: 100%;
+      overflow-x: auto;
+
+      justify-content: space-between;
+      margin-bottom: get-vw(85px);
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin-bottom: 50px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        gap: 35px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0 !important;
+      }
+    }
+    &__list-item {
+      white-space: nowrap;
+      letter-spacing: 0.44px;
+      text-transform: uppercase;
+      font-size: het-vw(22px);
+      line-height: 2.5;
+      font-weight: 500;
+      border-bottom: 5px solid rgba(255, 255, 255, 0);
+      // $color-border-light;
+      cursor: pointer;
+      font-family: $font;
+      @include tr;
+      @media screen and (max-width: $breakpoint-tablet) {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.36px;
+        border-bottom-width: 4px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.24px;
+        border-bottom-width: 2px;
+      }
+      &.active {
+        border-color: $color-border-light;
+      }
+    }
+
+    &__text {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+.experience {
+  &__value {
+    font-size: get-vw(123px);
+    font-weight: 400;
+    line-height: normal;
+    @media screen and (max-width: $breakpoint-tablet) {
+      font-size: 109.6px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 52px;
+    }
+  }
+  &__sub {
+    font-size: get-vw(23px);
+    line-height: 1.25;
+    font-weight: 400;
+    @media screen and (max-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 16px;
+    }
+  }
+}
